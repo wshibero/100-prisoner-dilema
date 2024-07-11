@@ -16,12 +16,12 @@ function isPresent(numbers, num)
   return false
 end
 
-function utilities.get_drawer_numbers()
+function utilities.get_drawer_numbers(max)
   local numbers = {}
-  while #numbers ~= 100 do
-    local num = utilities.get_random(1, 100)
+  while #numbers ~= max do
+    local num = utilities.get_random(1, max)
     while isPresent(numbers, num) == true do
-      num = utilities.get_random(1, 100)
+      num = utilities.get_random(1, max)
     end
     table.insert(numbers, num)
   end
